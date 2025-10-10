@@ -23,7 +23,7 @@ window.addEventListener('scroll', function() {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
+        if (pageYOffset >= sectionTop - 100) {
             current = section.getAttribute('id');
         }
     });
@@ -54,37 +54,42 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Resume download simulation
-document.getElementById('downloadResume').addEventListener('click', function(e) {
-    e.preventDefault();
-    alert('Resume download would start here. In a real implementation, this would download your PDF resume.');
-});
-
-// Add hover effects to skill items
-document.querySelectorAll('.skill-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px)';
-        this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 136, 0.3)';
-    });
-    
-    item.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
-    });
-});
-
 // Resume download functionality
 document.getElementById('downloadResume').addEventListener('click', function(e) {
     e.preventDefault();
     
-    // Replace with the actual path to your resume file
     const resumeUrl = 'resume/Resume.pdf';
     
     // Create a temporary anchor element to trigger download
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Edwin_Bacay_Resume.pdf'; // The filename for download
+    link.download = 'Edwin_Bacay_Resume.pdf';
+    link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+});
+
+// Close sidebar when clicking outside on mobile
+document.addEventListener('click', function(e) {
+    const sidebar = document.querySelector('.sidebar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    
+    if (window.innerWidth <= 768 && 
+        sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) && 
+        !menuToggle.contains(e.target)) {
+        sidebar.classList.remove('active');
+        document.querySelector('.main-content').classList.remove('shifted');
+    }
+});
+
+// Prevent horizontal scroll on mobile
+window.addEventListener('resize', function() {
+    document.body.style.overflowX = 'hidden';
+});
+
+// Initialize - prevent horizontal scroll
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.style.overflowX = 'hidden';
 });
