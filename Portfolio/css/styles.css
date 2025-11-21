@@ -1062,3 +1062,66 @@ footer p {
         font-size: 0.85rem;
     }
 }
+
+    /* Notifications */
+.notification {
+position: fixed;
+top: 20px;
+right: 20px;
+background: var(--dark);
+border: 1px solid var(--primary);
+border-radius: 8px;
+padding: 1rem 1.5rem;
+color: var(--light);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+z-index: 10000;
+max-width: 400px;
+animation: slideIn 0.3s ease;
+}
+
+.notification.success {
+border-color: #00ff88;
+background: rgba(0, 255, 136, 0.1);
+}
+
+.notification.error {
+border-color: #ff0088;
+background: rgba(255, 0, 136, 0.1);
+}
+
+.notification.info {
+border-color: #0088ff;
+background: rgba(0, 136, 255, 0.1);
+}
+
+.notification-content {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.notification-content i {
+font-size: 1.2rem;
+}
+
+@keyframes slideIn {
+from {
+    transform: translateX(100%);
+    opacity: 0;
+}
+to {
+    transform: translateX(0);
+    opacity: 1;
+}
+}
+
+/* Form loading state */
+.btn:disabled {
+opacity: 0.7;
+cursor: not-allowed;
+transform: none !important;
+}
+
+.btn:disabled:hover {
+box-shadow: none !important;
+}

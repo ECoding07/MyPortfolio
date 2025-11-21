@@ -1,3 +1,8 @@
+// Initialize EmailJS (Add this at the top of your JS)
+(function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // You'll get this from EmailJS
+})();
+
 // Toggle Sidebar
 document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('.sidebar').classList.toggle('active');
@@ -36,22 +41,40 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Form submission
+// Enhanced Form submission with EmailJS
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
     
     // Get form data
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
+        message: document.getElementById('message').value,
+        to_email: 'edwinchristianedjanbacay143@gmail.com' // Your email
     };
     
-    // Here you would typically send the data to a server
-    // For now, we'll just show an alert
-    alert(`Thank you for your message, ${formData.name}! I will get back to you soon.`);
-    this.reset();
+    // Send email using EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+        .then(function(response) {
+            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+            document.getElementById('contactForm').reset();
+        }, function(error) {
+            console.error('Email sending failed:', error);
+            showNotification('Failed to send message. Please try again or contact me directly.', 'error');
+        })
+        .finally(function() {
+            // Restore button state
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
 });
 
 // Resume download functionality
@@ -83,6 +106,30 @@ document.addEventListener('click', function(e) {
         document.querySelector('.main-content').classList.remove('shifted');
     }
 });
+
+// Notification function
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
+    
+    // Create new notification
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        notification.remove();
+    }, 5000);
+}
 
 // Prevent horizontal scroll on mobile
 window.addEventListener('resize', function() {
