@@ -33,12 +33,16 @@
     <!-- Sidebar Navigation (Desktop) -->
     <aside class="sidebar">
         <div class="sidebar-content">
+            <div class="sidebar-logo">
+                <h1>EB</h1>
+                <p>Portfolio</p>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
                 <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
                 <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
-                <li><a href="#gallery" class="nav-link"><i class="fas fa-briefcase"></i> Projects</a></li>
+                <li><a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i> Projects</a></li>
                 <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
             <div class="sidebar-footer">
@@ -67,12 +71,30 @@
             <div class="container">
                 <div class="hero">
                     <div class="hero-content">
+                        <div class="hero-badge">
+                            <span>IT Student</span>
+                            <span>Web Developer</span>
+                        </div>
                         <h1>Hi, I'm <span class="highlight">Edwin Christian Edjan Bacay</span></h1>
                         <p class="quote">"Turning ideas into digital reality through code and creativity."</p>
                         <p>I'm a passionate IT student at Batangas State University with a strong interest in technology and innovation. I enjoy exploring new tools, solving technical challenges, and continuously improving my skills to prepare for a future career in the IT industry.</p>
                         <div class="hero-buttons">
                             <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                            <a href="#gallery" class="btn btn-secondary">View My Work</a>
+                            <a href="#projects" class="btn btn-secondary">View My Work</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <h3>7+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="stat">
+                                <h3>10+</h3>
+                                <p>Skills Mastered</p>
+                            </div>
+                            <div class="stat">
+                                <h3>2+</h3>
+                                <p>Years Experience</p>
+                            </div>
                         </div>
                     </div>
                     <div class="hero-image">
@@ -163,51 +185,143 @@
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- Education & Experience Section -->
         <section id="education" class="section-education">
             <div class="container">
                 <div class="section-header">
                     <h2><span class="section-number">02</span> Education & Experience</h2>
-                    <p class="section-subtitle">My academic journey</p>
+                    <p class="section-subtitle">My academic and professional journey</p>
                 </div>
-                <div class="timeline-container">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">2023 - Present</div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <h3>Tertiary Education</h3>
-                                    <span class="timeline-badge current">Current</span>
+                
+                <div class="education-experience-grid">
+                    <!-- Education Timeline -->
+                    <div class="timeline-container">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Education
+                        </h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2023 - Present</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>Tertiary Education</h3>
+                                        <span class="timeline-badge current">Current</span>
+                                    </div>
+                                    <h4>Batangas State University TNUE Mabini Campus</h4>
+                                    <p>Bachelor of Science in Information Technology</p>
+                                    <ul class="timeline-details">
+                                        <li>Learning advanced programming concepts</li>
+                                        <li>Web technologies and system administration</li>
+                                        <li>Database management and networking</li>
+                                        <li>Software engineering principles</li>
+                                    </ul>
                                 </div>
-                                <h4>Batangas State University TNUE Mabini Campus</h4>
-                                <p>Currently pursuing Bachelor's degree in Information Technology. Learning advanced programming concepts, web technologies, and system administration.</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2021 - 2023</div>
+                                <div class="timeline-content">
+                                    <h3>Senior High School</h3>
+                                    <h4>Anselmo A. Sandoval Memorial National High School</h4>
+                                    <p>ICT Track - Computer Systems Servicing</p>
+                                    <ul class="timeline-details">
+                                        <li>Specialization in networking and programming</li>
+                                        <li>Created first web development projects</li>
+                                        <li>Developed foundational IT skills</li>
+                                        <li>Completed capstone project in web development</li>
+                                    </ul>
+                                    <div class="achievement">
+                                        <i class="fas fa-trophy"></i> 4th Place - Senior High School Research Competition
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2017 - 2021</div>
+                                <div class="timeline-content">
+                                    <h3>Junior High School</h3>
+                                    <h4>Anselmo A. Sandoval Memorial National High School</h4>
+                                    <p>Science and Technology Class</p>
+                                    <ul class="timeline-details">
+                                        <li>Focus on mathematics and science</li>
+                                        <li>Basic computer literacy courses</li>
+                                        <li>Introduction to programming concepts</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2011 - 2017</div>
+                                <div class="timeline-content">
+                                    <h3>Elementary School</h3>
+                                    <h4>San Teodoro Elementary School</h4>
+                                    <p>Elementary Education</p>
+                                    <ul class="timeline-details">
+                                        <li>Graduated with honors</li>
+                                        <li>Early interest in computers and technology</li>
+                                        <li>Basic computer classes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certifications & Experience -->
+                    <div class="certifications-container">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-certificate"></i>
+                            Certifications & Experience
+                        </h3>
+                        
+                        <div class="certification-card">
+                            <div class="certification-header">
+                                <h4>NCII - Computer Systems Servicing</h4>
+                                <span class="certification-year">2023</span>
+                            </div>
+                            <div class="certification-body">
+                                <p class="certification-issuer">Technical Education and Skills Development Authority (TESDA)</p>
+                                <ul class="certification-skills">
+                                    <li>Computer Assembly & Disassembly</li>
+                                    <li>System Installation & Configuration</li>
+                                    <li>Network Setup & Troubleshooting</li>
+                                    <li>Hardware Maintenance & Repair</li>
+                                </ul>
+                                <div class="certification-badge">
+                                    <i class="fas fa-award"></i> Nationally Certified
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="timeline-item">
-                            <div class="timeline-date">2023</div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <h3>Technical Certification</h3>
-                                    <span class="timeline-badge certified">Certified</span>
-                                </div>
-                                <h4>NCII Holder - Computer Systems Servicing</h4>
-                                <p>Certified in Computer Systems Servicing by TESDA. Skills include computer assembly, installation, configuration, and troubleshooting.</p>
-                                <div class="achievement">
-                                    <i class="fas fa-certificate"></i> TESDA NCII Certified
-                                </div>
+                        <div class="certification-card">
+                            <div class="certification-header">
+                                <h4>Web Development Projects</h4>
+                                <span class="certification-year">2022-Present</span>
+                            </div>
+                            <div class="certification-body">
+                                <p class="certification-issuer">Personal & Academic Projects</p>
+                                <ul class="certification-skills">
+                                    <li>Full-stack web application development</li>
+                                    <li>Responsive web design</li>
+                                    <li>Database integration</li>
+                                    <li>Version control with Git</li>
+                                </ul>
                             </div>
                         </div>
                         
-                        <div class="timeline-item">
-                            <div class="timeline-date">2021 - 2023</div>
-                            <div class="timeline-content">
-                                <h3>Senior High School</h3>
-                                <h4>Anselmo A. Sandoval Memorial National High School</h4>
-                                <p>Took ICT track with specialization in networking and programming. Created first web projects and developed foundational IT skills.</p>
-                                <div class="achievement">
-                                    <i class="fas fa-trophy"></i> 4th Place - Senior High School Research Competition
-                                </div>
+                        <div class="certification-card">
+                            <div class="certification-header">
+                                <h4>Technical Skills Development</h4>
+                                <span class="certification-year">2021-Present</span>
+                            </div>
+                            <div class="certification-body">
+                                <p class="certification-issuer">Self-Learning & Online Courses</p>
+                                <ul class="certification-skills">
+                                    <li>Frontend Development (HTML, CSS, JS)</li>
+                                    <li>Backend Development (Node.js, Python)</li>
+                                    <li>Database Management (SQL, MongoDB)</li>
+                                    <li>UI/UX Design Principles</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -220,9 +334,10 @@
             <div class="container">
                 <div class="section-header">
                     <h2><span class="section-number">03</span> My Skills</h2>
-                    <p class="section-subtitle">Technical expertise</p>
+                    <p class="section-subtitle">Technical expertise and proficiencies</p>
                 </div>
-                <div class="skills-grid">
+                
+                <div class="skills-overview">
                     <div class="skill-category">
                         <div class="category-header">
                             <i class="fab fa-html5"></i>
@@ -237,6 +352,7 @@
                                 <div class="progress-bar">
                                     <div class="progress" style="width: 85%"></div>
                                 </div>
+                                <p class="skill-description">Semantic HTML, Accessibility, Modern APIs</p>
                             </div>
                             <div class="skill">
                                 <div class="skill-info">
@@ -246,6 +362,7 @@
                                 <div class="progress-bar">
                                     <div class="progress" style="width: 80%"></div>
                                 </div>
+                                <p class="skill-description">Flexbox, Grid, Animations, Responsive Design</p>
                             </div>
                             <div class="skill">
                                 <div class="skill-info">
@@ -255,6 +372,7 @@
                                 <div class="progress-bar">
                                     <div class="progress" style="width: 70%"></div>
                                 </div>
+                                <p class="skill-description">ES6+, DOM Manipulation, Async Programming</p>
                             </div>
                         </div>
                     </div>
@@ -273,6 +391,7 @@
                                 <div class="progress-bar">
                                     <div class="progress" style="width: 70%"></div>
                                 </div>
+                                <p class="skill-description">OOP, Data Structures, Basic Applications</p>
                             </div>
                             <div class="skill">
                                 <div class="skill-info">
@@ -282,6 +401,7 @@
                                 <div class="progress-bar">
                                     <div class="progress" style="width: 65%"></div>
                                 </div>
+                                <p class="skill-description">Scripting, Data Analysis, Automation</p>
                             </div>
                             <div class="skill">
                                 <div class="skill-info">
@@ -291,43 +411,46 @@
                                 <div class="progress-bar">
                                     <div class="progress" style="width: 50%"></div>
                                 </div>
+                                <p class="skill-description">Basic Syntax, Problem Solving, Algorithms</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <i class="fas fa-tools"></i>
-                            <h3>Tools & Technologies</h3>
+                </div>
+                
+                <div class="tools-technologies">
+                    <h3>Tools & Technologies</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git & GitHub</span>
                         </div>
-                        <div class="skill-list">
-                            <div class="skill">
-                                <div class="skill-info">
-                                    <span class="skill-name">Git & GitHub</span>
-                                    <span class="skill-percent">75%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-info">
-                                    <span class="skill-name">SQL</span>
-                                    <span class="skill-percent">60%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-info">
-                                    <span class="skill-name">System Servicing</span>
-                                    <span class="skill-percent">85%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 85%"></div>
-                                </div>
-                            </div>
+                        <div class="tool-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-terminal"></i>
+                            <span>Command Line</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-server"></i>
+                            <span>System Servicing</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>UI/UX Design</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Responsive Design</span>
                         </div>
                     </div>
                 </div>
@@ -335,25 +458,42 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="gallery" class="section-projects">
+        <section id="projects" class="section-projects">
             <div class="container">
                 <div class="section-header">
                     <h2><span class="section-number">04</span> My Projects</h2>
-                    <p class="section-subtitle">Featured work</p>
+                    <p class="section-subtitle">Complete portfolio of my work</p>
                 </div>
+                
+                <!-- Featured Projects -->
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                    <button class="filter-btn" data-filter="design">UI/UX</button>
+                </div>
+                
                 <div class="projects-grid">
-                    <div class="project-card">
+                    <!-- UNITECH -->
+                    <div class="project-card" data-category="web ecommerce">
                         <div class="project-image">
                             <img src="image/UNITECH.png" alt="UNITECH Online Laptop Shop">
+                            <div class="project-overlay">
+                                <span class="project-type">Full Stack</span>
+                            </div>
                         </div>
                         <div class="project-content">
-                            <h3>UNITECH</h3>
+                            <div class="project-header">
+                                <h3>UNITECH</h3>
+                                <div class="project-year">2024</div>
+                            </div>
                             <p>An online laptop shopping platform built with modern web technologies. Features include product catalog, shopping cart, user authentication, and secure payment processing.</p>
                             <div class="project-tags">
                                 <span>TypeScript</span>
                                 <span>Next.js</span>
                                 <span>NeonDB</span>
                                 <span>Stripe</span>
+                                <span>Full Stack</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://v0-ecommercewebsitebuild-kq.vercel.app/" target="_blank" class="project-link">
@@ -366,18 +506,26 @@
                         </div>
                     </div>
                     
-                    <div class="project-card">
+                    <!-- Bakerist -->
+                    <div class="project-card" data-category="web ecommerce">
                         <div class="project-image">
                             <img src="image/Bakerist.png" alt="Bakerist Food Ordering System">
+                            <div class="project-overlay">
+                                <span class="project-type">Frontend</span>
+                            </div>
                         </div>
                         <div class="project-content">
-                            <h3>Bakerist</h3>
-                            <p>A comprehensive online food ordering system featuring menu browsing, cart management, and order tracking. Uses local storage/JSON for data persistence.</p>
+                            <div class="project-header">
+                                <h3>Bakerist</h3>
+                                <div class="project-year">2023</div>
+                            </div>
+                            <p>A comprehensive online food ordering system featuring menu browsing, cart management, and order tracking. Uses local storage/JSON for data persistence without backend requirements.</p>
                             <div class="project-tags">
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
                                 <span>Local Storage</span>
+                                <span>Responsive</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://bakerist-chi.vercel.app/" target="_blank" class="project-link">
@@ -390,17 +538,26 @@
                         </div>
                     </div>
                     
-                    <div class="project-card">
+                    <!-- Lookers Activity -->
+                    <div class="project-card" data-category="design">
                         <div class="project-image">
                             <img src="image/Lookers.png" alt="Lookers Data Visualization">
+                            <div class="project-overlay">
+                                <span class="project-type">Data Visualization</span>
+                            </div>
                         </div>
                         <div class="project-content">
-                            <h3>Lookers Activity</h3>
+                            <div class="project-header">
+                                <h3>Lookers Activity</h3>
+                                <div class="project-year">2023</div>
+                            </div>
                             <p>Interactive data visualization dashboard for Nutriblends production and sales analytics. Provides insights through charts, graphs, and real-time data representation.</p>
                             <div class="project-tags">
                                 <span>Google Looker</span>
                                 <span>Data Visualization</span>
                                 <span>Analytics</span>
+                                <span>Dashboard</span>
+                                <span>Business Intelligence</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://lookerstudio.google.com/reporting/d08097dc-b152-4491-862f-2b5d1a321c43/page/p_esz996i1xd" target="_blank" class="project-link">
@@ -409,26 +566,151 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Mabini Travelers V2 -->
+                    <div class="project-card" data-category="web design">
+                        <div class="project-image">
+                            <img src="image/MabiniV2.png" alt="Mabini Travelers V2">
+                            <div class="project-overlay">
+                                <span class="project-type">Tourism Website</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Mabini Travelers V2</h3>
+                                <div class="project-year">2023</div>
+                            </div>
+                            <p>Enhanced tourism website dedicated to showcasing the breathtaking beauty of Mabini, Batangas. Features modernized design with improved layout, responsiveness, and visuals.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Responsive</span>
+                                <span>Tourism</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://mabini-travelers-v2.vercel.app/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/ECoding07/Mabini-Travelers-V2" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mabini Travelers -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="image/Mabini.png" alt="Mabini Travelers">
+                            <div class="project-overlay">
+                                <span class="project-type">Tourism Website</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Mabini Travelers</h3>
+                                <div class="project-year">2022</div>
+                            </div>
+                            <p>A tourism website showcasing the best tourist spots, resorts, and beaches in Mabini, Batangas. Serves as a digital travel guide to help visitors discover natural beauty and local culture.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Tourism</span>
+                                <span>Travel Guide</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://mabini-travelers-xi.vercel.app/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/ECoding07/Mabini-Travelers" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TechZone -->
+                    <div class="project-card" data-category="web ecommerce">
+                        <div class="project-image">
+                            <img src="image/TechZone.png" alt="TechZone E-commerce">
+                            <div class="project-overlay">
+                                <span class="project-type">E-commerce</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>TechZone</h3>
+                                <div class="project-year">2023</div>
+                            </div>
+                            <p>A technology-focused e-commerce platform showcasing the latest gadgets and tech products with a modern, responsive design and OAuth authentication.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>OAuth</span>
+                                <span>E-commerce</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ECoding07/TechZone" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Website -->
+                    <div class="project-card" data-category="web design">
+                        <div class="project-image">
+                            <img src="image/Portfolio.png" alt="Portfolio Website">
+                            <div class="project-overlay">
+                                <span class="project-type">Portfolio</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Portfolio Website</h3>
+                                <div class="project-year">2024</div>
+                            </div>
+                            <p>My personal portfolio website showcasing my projects, skills, and achievements. Built with modern web technologies and featuring a responsive design with contact form functionality.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>EmailJS</span>
+                                <span>Responsive</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ECoding07/MyPortfolio" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="more-projects">
-                    <h3>More Projects</h3>
-                    <div class="projects-mini-grid">
-                        <div class="mini-project">
-                            <h4>Mabini-Travelers-V2</h4>
-                            <p>Enhanced tourism website for Mabini, Batangas</p>
-                            <a href="https://mabini-travelers-v2.vercel.app/" target="_blank">View</a>
-                        </div>
-                        <div class="mini-project">
-                            <h4>TechZone</h4>
-                            <p>Technology-focused e-commerce platform</p>
-                            <a href="https://github.com/ECoding07/TechZone" target="_blank">View</a>
-                        </div>
-                        <div class="mini-project">
-                            <h4>Portfolio Website</h4>
-                            <p>Personal portfolio with responsive design</p>
-                            <a href="https://github.com/ECoding07/MyPortfolio" target="_blank">View</a>
-                        </div>
+                <!-- Project Statistics -->
+                <div class="project-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>7</h3>
+                        <p>Total Projects</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-code"></i>
+                        <h3>5</h3>
+                        <p>Web Development</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>3</h3>
+                        <p>E-commerce</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-palette"></i>
+                        <h3>3</h3>
+                        <p>UI/UX Design</p>
                     </div>
                 </div>
             </div>
@@ -456,7 +738,7 @@
                         <div class="contact-card">
                             <i class="fas fa-map-marker-alt"></i>
                             <h3>Location</h3>
-                            <p>Mabini, Batangas</p>
+                            <p>Mabini, Batangas, Philippines</p>
                         </div>
                         <div class="contact-card">
                             <i class="fas fa-clock"></i>
@@ -500,15 +782,15 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <h3>Edwin Bacay</h3>
-                        <p>Information Technology Student</p>
+                        <h3>Edwin Christian E. Bacay</h3>
+                        <p>Information Technology Student & Web Developer</p>
                     </div>
                     <div class="footer-links">
                         <a href="#home">Home</a>
                         <a href="#about">About</a>
                         <a href="#education">Education</a>
                         <a href="#skills">Skills</a>
-                        <a href="#gallery">Projects</a>
+                        <a href="#projects">Projects</a>
                         <a href="#contact">Contact</a>
                     </div>
                     <div class="footer-social">
@@ -519,7 +801,7 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2024 Edwin Christian E. Bacay. All Rights Reserved.</p>
+                    <p>&copy; 2024 Edwin Christian E. Bacay. All Rights Reserved. | Built with ❤️ using HTML, CSS & JavaScript</p>
                 </div>
             </div>
         </footer>
