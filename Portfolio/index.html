@@ -7,6 +7,8 @@
     <link rel="icon" type="image/x-icon" href="image/Logo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Moving Line Background -->
@@ -16,50 +18,60 @@
         <div class="line"></div>
     </div>
 
-    <!-- Sidebar Navigation -->
-    <div class="sidebar">
-        <div class="logo">
-            <h1>Edwin Bacay</h1>
-            <p>Information Technology Student</p>
+    <!-- Top Navigation Bar (Mobile) -->
+    <nav class="mobile-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>Edwin Christian E. Bacay</h2>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-            <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-            <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
-            <li><a href="#gallery"><i class="fas fa-briefcase"></i> Projects</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-        <div class="resume-download">
-            <a href="resume/Resume.pdf" class="btn-download" id="downloadResume">
-                <i class="fas fa-download"></i> Download Resume
-            </a>
-        </div>
-        <div class="social-links">
-            <a href="https://www.facebook.com/edwinchristian.bacay.1"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://github.com/ECoding07"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/ec_bacay/"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/christian-bacay-157982358/"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-    </div>
+    </nav>
 
-    <!-- Menu Toggle -->
-    <div class="menu-toggle">
-        <i class="fas fa-bars"></i>
-    </div>
+    <!-- Sidebar Navigation (Desktop) -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#gallery" class="nav-link"><i class="fas fa-briefcase"></i> Projects</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="resume-download">
+                    <a href="resume/Resume.pdf" class="btn-download" id="downloadResume" download>
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/edwinchristian.bacay.1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/ECoding07" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/ec_bacay/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/christian-bacay-157982358/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay"></div>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <main class="main-content">
         <!-- Home Section -->
-        <section id="home">
+        <section id="home" class="section-home">
             <div class="container">
                 <div class="hero">
                     <div class="hero-content">
-                        <h1>Hi, I'm <span>Edwin Christian E. Bacay</span></h1>
+                        <h1>Hi, I'm <span class="highlight">Edwin Christian Edjan Bacay</span></h1>
                         <p class="quote">"Turning ideas into digital reality through code and creativity."</p>
                         <p>I'm a passionate IT student at Batangas State University with a strong interest in technology and innovation. I enjoy exploring new tools, solving technical challenges, and continuously improving my skills to prepare for a future career in the IT industry.</p>
                         <div class="hero-buttons">
-                            <a href="#contact" class="btn">Get In Touch</a>
+                            <a href="#contact" class="btn btn-primary">Get In Touch</a>
                             <a href="#gallery" class="btn btn-secondary">View My Work</a>
                         </div>
                     </div>
@@ -72,52 +84,79 @@
         </section>
 
         <!-- About Section -->
-        <section id="about">
+        <section id="about" class="section-about">
             <div class="container">
                 <div class="section-header">
-                    <h2>About Me</h2>
+                    <h2><span class="section-number">01</span> About Me</h2>
+                    <p class="section-subtitle">Get to know me better</p>
                 </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Hello! I'm Edwin Christian E. Bacay, a dedicated IT student with a passion for creating digital experiences that are both functional and visually appealing. My journey in web development started during my college years, and I've been constantly learning and improving ever since.</p>
-                        <p>I specialize in front-end development but also have experience with back-end technologies. I believe in writing clean, efficient code and creating user-friendly interfaces that provide great experiences.</p>
-                        <p>When I'm not coding, you can find me exploring new technologies, working on personal projects, or learning about the latest trends in web development. I'm always excited to take on new challenges and collaborate on interesting projects.</p>
-                        <div class="interests">
-                            <h3>Interests & Hobbies</h3>
-                            <div class="interest-tags">
-                                <span class="interest-tag">Web Development</span>
-                                <span class="interest-tag">UI/UX Design</span>
-                                <span class="interest-tag">Mobile Apps</span>
-                                <span class="interest-tag">Photography</span>
-                                <span class="interest-tag">Travel</span>
-                                <span class="interest-tag">Gaming</span>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-card-header">
+                            <i class="fas fa-user-circle"></i>
+                            <h3>Personal Profile</h3>
+                        </div>
+                        <div class="personal-info">
+                            <div class="info-item">
+                                <strong>Name:</strong>
+                                <span>Edwin Christian E. Bacay</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Email:</strong>
+                                <span>edwinchristianedjanbacay143@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Phone:</strong>
+                                <span>+63 909 612 1428</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Location:</strong>
+                                <span>Mabini, Batangas</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Status:</strong>
+                                <span class="status-badge">Seeking Internship</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Languages:</strong>
+                                <span>English, Filipino</span>
                             </div>
                         </div>
                     </div>
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <strong>Name:</strong>
-                            <span>Edwin Christian E. Bacay</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Email:</strong>
-                            <span>edwinchristianedjanbacay143@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Phone:</strong>
-                            <span>+63 909 612 1428</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Location:</strong>
-                            <span>Mabini, Batangas</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Status:</strong>
-                            <span>Seeking Internship Opportunities</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Languages:</strong>
-                            <span>English, Filipino</span>
+                    
+                    <div class="about-content">
+                        <h3>My Story</h3>
+                        <p>Hello! I'm Edwin Christian E. Bacay, a dedicated IT student with a passion for creating digital experiences that are both functional and visually appealing. My journey in web development started during my college years, and I've been constantly learning and improving ever since.</p>
+                        <p>I specialize in front-end development but also have experience with back-end technologies. I believe in writing clean, efficient code and creating user-friendly interfaces that provide great experiences.</p>
+                        
+                        <div class="interests-section">
+                            <h4>Interests & Hobbies</h4>
+                            <div class="interest-grid">
+                                <div class="interest-item">
+                                    <i class="fas fa-laptop-code"></i>
+                                    <span>Web Development</span>
+                                </div>
+                                <div class="interest-item">
+                                    <i class="fas fa-palette"></i>
+                                    <span>UI/UX Design</span>
+                                </div>
+                                <div class="interest-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Mobile Apps</span>
+                                </div>
+                                <div class="interest-item">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Photography</span>
+                                </div>
+                                <div class="interest-item">
+                                    <i class="fas fa-plane"></i>
+                                    <span>Travel</span>
+                                </div>
+                                <div class="interest-item">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>Gaming</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,222 +164,49 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education">
+        <section id="education" class="section-education">
             <div class="container">
                 <div class="section-header">
-                    <h2>Education & Experience</h2>
+                    <h2><span class="section-number">02</span> Education & Experience</h2>
+                    <p class="section-subtitle">My academic journey</p>
                 </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Tertiary Education</h3>
-                            <div class="date">2023 - Present</div>
-                            <h4>Batangas State University TNUE Mabini Campus</h4>
-                            <p>Currently pursuing Bachelor's degree in Information Technology. Learning advanced programming concepts and web technologies.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Senior High School</h3>
-                            <div class="date">2021 - 2023</div>
-                            <h4>Anselmo A. Sandoval Memorial National High School</h4>
-                            <p>Took ICT track with specialization in networking and programming. Created first web projects.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Secondary Education</h3>
-                            <div class="date">2017 - 2021</div>
-                            <h4>Anselmo A. Sandoval Memorial National High School</h4>
-                            <p>Completed Junior High School with focus on mathematics, science and technology.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Primary Education</h3>
-                            <div class="date">2011 - 2017</div>
-                            <h4>San Teodoro Elementary School</h4>
-                            <p>Graduated from Elementary School. Developed interest in computers and technology.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="container">
-                <div class="section-header">
-                    <h2>My Skills</h2>
-                </div>
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <h3>Frontend Development</h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fab fa-html5"></i>
-                                    </div>
-                                    <div class="skill-name">HTML5</div>
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023 - Present</div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Tertiary Education</h3>
+                                    <span class="timeline-badge current">Current</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 85%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Proficient in semantic HTML, accessibility standards, and modern HTML5 APIs.</p>
-                                    <div class="skill-tech">
-                                        <span>Semantic HTML</span>
-                                        <span>Accessibility</span>
-                                        <span>HTML5 APIs</span>
-                                    </div>
-                                </div>
+                                <h4>Batangas State University TNUE Mabini Campus</h4>
+                                <p>Currently pursuing Bachelor's degree in Information Technology. Learning advanced programming concepts, web technologies, and system administration.</p>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fab fa-css3-alt"></i>
-                                    </div>
-                                    <div class="skill-name">CSS3</div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3>Technical Certification</h3>
+                                    <span class="timeline-badge certified">Certified</span>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 80%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Experienced with CSS Grid, Flexbox, animations, and responsive design principles.</p>
-                                    <div class="skill-tech">
-                                        <span>CSS Grid</span>
-                                        <span>Flexbox</span>
-                                        <span>Animations</span>
-                                        <span>Responsive Design</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fab fa-js"></i>
-                                    </div>
-                                    <div class="skill-name">JavaScript</div>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 70%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Knowledge of ES6+ features, DOM manipulation, and basic algorithms.</p>
-                                    <div class="skill-tech">
-                                        <span>ES6+</span>
-                                        <span>DOM Manipulation</span>
-                                        <span>Event Handling</span>
-                                    </div>
+                                <h4>NCII Holder - Computer Systems Servicing</h4>
+                                <p>Certified in Computer Systems Servicing by TESDA. Skills include computer assembly, installation, configuration, and troubleshooting.</p>
+                                <div class="achievement">
+                                    <i class="fas fa-certificate"></i> TESDA NCII Certified
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fab fa-java"></i>
-                                    </div>
-                                    <div class="skill-name">Java</div>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 70%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Object-oriented programming, data structures, and basic application development.</p>
-                                    <div class="skill-tech">
-                                        <span>OOP</span>
-                                        <span>Data Structures</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fab fa-python"></i>
-                                    </div>
-                                    <div class="skill-name">Python</div>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 65%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Basic scripting, data analysis, and automation tasks.</p>
-                                    <div class="skill-tech">
-                                        <span>Scripting</span>
-                                        <span>Data Analysis</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <div class="skill-name">C++</div>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 50%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Fundamental programming concepts and basic application development.</p>
-                                    <div class="skill-tech">
-                                        <span>Basic Syntax</span>
-                                        <span>Problem Solving</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Tools & Technologies</h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fab fa-git"></i>
-                                    </div>
-                                    <div class="skill-name">Git & GitHub</div>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 75%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Version control, collaboration, and project management using Git and GitHub.</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fas fa-database"></i>
-                                    </div>
-                                    <div class="skill-name">SQL</div>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 60%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Basic database design, queries, and data manipulation.</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <div class="skill-icon">
-                                        <i class="fas fa-paint-brush"></i>
-                                    </div>
-                                    <div class="skill-name">UI/UX Design</div>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 65%"></div>
-                                </div>
-                                <div class="skill-details">
-                                    <p>Wireframing, prototyping, and creating user-centered designs.</p>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">2021 - 2023</div>
+                            <div class="timeline-content">
+                                <h3>Senior High School</h3>
+                                <h4>Anselmo A. Sandoval Memorial National High School</h4>
+                                <p>Took ICT track with specialization in networking and programming. Created first web projects and developed foundational IT skills.</p>
+                                <div class="achievement">
+                                    <i class="fas fa-trophy"></i> 4th Place - Senior High School Research Competition
                                 </div>
                             </div>
                         </div>
@@ -349,109 +215,219 @@
             </div>
         </section>
 
-        <!-- Gallery/Projects Section -->
-        <section id="gallery">
+        <!-- Skills Section -->
+        <section id="skills" class="section-skills">
             <div class="container">
                 <div class="section-header">
-                    <h2>My Projects</h2>
+                    <h2><span class="section-number">03</span> My Skills</h2>
+                    <p class="section-subtitle">Technical expertise</p>
                 </div>
-                <div class="gallery-container">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fab fa-html5"></i>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS3</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percent">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Programming Languages</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java</span>
+                                    <span class="skill-percent">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percent">65%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">C++</span>
+                                    <span class="skill-percent">50%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Tools & Technologies</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git & GitHub</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">SQL</span>
+                                    <span class="skill-percent">60%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-info">
+                                    <span class="skill-name">System Servicing</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="gallery" class="section-projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="section-number">04</span> My Projects</h2>
+                    <p class="section-subtitle">Featured work</p>
+                </div>
+                <div class="projects-grid">
                     <div class="project-card">
-                        <img src="image/UNITECH.png" alt="UNITECH Online Laptop Shop" class="project-img">
-                        <div class="project-info">
+                        <div class="project-image">
+                            <img src="image/UNITECH.png" alt="UNITECH Online Laptop Shop">
+                        </div>
+                        <div class="project-content">
                             <h3>UNITECH</h3>
                             <p>An online laptop shopping platform built with modern web technologies. Features include product catalog, shopping cart, user authentication, and secure payment processing.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">NeonDB</span>
-                                <span class="tech-tag">Stripe</span>
+                            <div class="project-tags">
+                                <span>TypeScript</span>
+                                <span>Next.js</span>
+                                <span>NeonDB</span>
+                                <span>Stripe</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://v0-ecommercewebsitebuild-kq.vercel.app/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/ECoding07"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://v0-ecommercewebsitebuild-kq.vercel.app/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/ECoding07" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="project-card">
-                        <img src="image/Bakerist.png" alt="Bakerist Food Ordering System" class="project-img">
-                        <div class="project-info">
+                        <div class="project-image">
+                            <img src="image/Bakerist.png" alt="Bakerist Food Ordering System">
+                        </div>
+                        <div class="project-content">
                             <h3>Bakerist</h3>
-                            <p>A comprehensive online food ordering system featuring menu browsing, cart management, and order tracking. Uses local storage/JSON for data persistence without backend requirements.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Local Storage</span>
+                            <p>A comprehensive online food ordering system featuring menu browsing, cart management, and order tracking. Uses local storage/JSON for data persistence.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Local Storage</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://bakerist-chi.vercel.app/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/ECoding07"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://bakerist-chi.vercel.app/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/ECoding07" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="project-card">
-                        <img src="image/Lookers.png" alt="Lookers Data Visualization" class="project-img">
-                        <div class="project-info">
+                        <div class="project-image">
+                            <img src="image/Lookers.png" alt="Lookers Data Visualization">
+                        </div>
+                        <div class="project-content">
                             <h3>Lookers Activity</h3>
                             <p>Interactive data visualization dashboard for Nutriblends production and sales analytics. Provides insights through charts, graphs, and real-time data representation.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Google Looker</span>
-                                <span class="tech-tag">Data Visualization</span>
-                                <span class="tech-tag">Analytics</span>
-                                <span class="tech-tag">Dashboard</span>
+                            <div class="project-tags">
+                                <span>Google Looker</span>
+                                <span>Data Visualization</span>
+                                <span>Analytics</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://lookerstudio.google.com/reporting/d08097dc-b152-4491-862f-2b5d1a321c43/page/p_esz996i1xd?fbclid=IwY2xjawOHYDRleHRuA2FlbQIxMABicmlkETFvWlhoTDJSUGFnb29FOE5Tc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MghjYWxsc2l0ZQEyAAEe_hAcZDuhwYLHvQNGkAP9CsAzNqH5uFICuw4BkwiHYjavHt7VuNZ_qsWxMwY_aem_oCy1D7QSOTSQF91538MrBw"><i class="fas fa-external-link-alt"></i> Live Dashboard</a>
+                                <a href="https://lookerstudio.google.com/reporting/d08097dc-b152-4491-862f-2b5d1a321c43/page/p_esz996i1xd" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Dashboard
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <img src="image/MabiniV2.png" alt="Mabini Travelers V2" class="project-img">
-                        <div class="project-info">
-                            <h3>Mabini-Travelers-V2</h3>
-                            <p>Mabini Travelers (Version 2) is an enhanced tourism website dedicated to showcasing the breathtaking beauty of Mabini, Batangas. This updated version features a modernized design with improved layout, responsiveness, and visuals.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://mabini-travelers-v2.vercel.app/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/ECoding07/Mabini-Travelers-V2"><i class="fab fa-github"></i> Code</a>
-                            </div>
+                </div>
+                
+                <div class="more-projects">
+                    <h3>More Projects</h3>
+                    <div class="projects-mini-grid">
+                        <div class="mini-project">
+                            <h4>Mabini-Travelers-V2</h4>
+                            <p>Enhanced tourism website for Mabini, Batangas</p>
+                            <a href="https://mabini-travelers-v2.vercel.app/" target="_blank">View</a>
                         </div>
-                    </div>
-                    <div class="project-card">
-                        <img src="image/Mabini.png" alt="Mabini Travelers" class="project-img">
-                        <div class="project-info">
-                            <h3>Mabini-Travelers</h3>
-                            <p>Mabini Travelers is a tourism website that showcases the best tourist spots, resorts, and beaches in Mabini, Batangas. It serves as a digital travel guide designed to help visitors discover the natural beauty and local culture.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://mabini-travelers-xi.vercel.app/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="https://github.com/ECoding07/Mabini-Travelers"><i class="fab fa-github"></i> Code</a>
-                            </div>
+                        <div class="mini-project">
+                            <h4>TechZone</h4>
+                            <p>Technology-focused e-commerce platform</p>
+                            <a href="https://github.com/ECoding07/TechZone" target="_blank">View</a>
                         </div>
-                    </div>
-                    <div class="project-card">
-                        <img src="image/TechZone.png" alt="TechZone E-commerce" class="project-img">
-                        <div class="project-info">
-                            <h3>TechZone</h3>
-                            <p>A technology-focused e-commerce platform showcasing the latest gadgets and tech products with a modern, responsive design and OAuth authentication.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">OAuth</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/ECoding07/TechZone"><i class="fab fa-github"></i> Code</a>
-                            </div>
+                        <div class="mini-project">
+                            <h4>Portfolio Website</h4>
+                            <p>Personal portfolio with responsive design</p>
+                            <a href="https://github.com/ECoding07/MyPortfolio" target="_blank">View</a>
                         </div>
                     </div>
                 </div>
@@ -459,71 +435,57 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
+        <section id="contact" class="section-contact">
             <div class="container">
                 <div class="section-header">
-                    <h2>Contact Me</h2>
+                    <h2><span class="section-number">05</span> Contact Me</h2>
+                    <p class="section-subtitle">Let's work together</p>
                 </div>
-                <div class="contact-container">
+                <div class="contact-grid">
                     <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h3>Phone</h3>
-                                <p>+63 909 612 1428</p>
-                            </div>
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p>edwinchristianedjanbacay143@gmail.com</p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3>Email</h3>
-                                <p>edwinchristianedjanbacay143@gmail.com</p>
-                            </div>
+                        <div class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>Phone</h3>
+                            <p>+63 909 612 1428</p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h3>Location</h3>
-                                <p>Mabini, Batangas</p>
-                            </div>
+                        <div class="contact-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Location</h3>
+                            <p>Mabini, Batangas</p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h3>Availability</h3>
-                                <p>Monday - Friday: 9AM - 6PM</p>
-                            </div>
+                        <div class="contact-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Availability</h3>
+                            <p>Monday - Friday: 9AM - 6PM</p>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <form action="https://formspree.io/f/xdkbqvna" method="POST" id="contactForm">
+                    
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                                <input type="text" id="name" name="name" required placeholder="Enter your name">
                             </div>
                             <div class="form-group">
                                 <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email">
                             </div>
                             <div class="form-group">
                                 <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter subject" required>
+                                <input type="text" id="subject" name="subject" required placeholder="Enter subject">
                             </div>
                             <div class="form-group">
                                 <label for="message">Your Message</label>
-                                <textarea id="message" name="message" class="form-control" placeholder="Enter your message" required></textarea>
+                                <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
                             </div>
-                            <button type="submit" class="btn">
+                            <button type="submit" class="btn btn-primary">
                                 <span class="btn-text">Send Message</span>
-                                <span class="btn-loading" style="display: none;">
+                                <span class="btn-loading">
                                     <i class="fas fa-spinner fa-spin"></i> Sending...
                                 </span>
                             </button>
@@ -534,12 +496,34 @@
         </section>
 
         <!-- Footer -->
-        <footer>
+        <footer class="footer">
             <div class="container">
-                <p>&copy; 2024 Edwin Christian E. Bacay. All Rights Reserved.</p>
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>Edwin Bacay</h3>
+                        <p>Information Technology Student</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#education">Education</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#gallery">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/edwinchristian.bacay.1" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://github.com/ECoding07" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/ec_bacay/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/christian-bacay-157982358/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Edwin Christian E. Bacay. All Rights Reserved.</p>
+                </div>
             </div>
         </footer>
-    </div>
+    </main>
 
     <script src="js/main.js"></script>
 </body>
