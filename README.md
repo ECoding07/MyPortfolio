@@ -6,7 +6,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and exper
 
 ## 🚀 Live Demo
 
-[[Add your portfolio URL here]](https://ecbacay-portfolio-67kqos12w-poginichris-projects.vercel.app/)
+https://ecbacay-portfolio-67kqos12w-poginichris-projects.vercel.app/
 
 ## ✨ Features
 
