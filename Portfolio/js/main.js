@@ -178,17 +178,21 @@ function initializeProjectFilter() {
     filterProjects('all');
 }
 
-// Progress Bar Animation on Scroll
+// Progress Bar Animation on Scroll - FIXED VERSION
 function animateProgressBars() {
+    // Simply ensure progress bars show at their correct widths
     const progressBars = document.querySelectorAll('.progress');
     
     progressBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 100);
+        // Get the original inline style width
+        const styleAttr = bar.getAttribute('style');
+        if (styleAttr) {
+            const widthMatch = styleAttr.match(/width:\s*(\d+%)/);
+            if (widthMatch && widthMatch[1]) {
+                // Ensure the width is set correctly
+                bar.style.width = widthMatch[1];
+            }
+        }
     });
 }
 
@@ -301,6 +305,95 @@ function addCustomStyles() {
     document.head.appendChild(style);
 }
 
+// Fix for mobile viewport height
+function fixMobileViewport() {
+    // First we get the viewport height and we multiply it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    
+    // Update on resize
+    window.addEventListener('resize', () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+}
+
+// Prevent zoom on input focus in iOS
+function preventIOSZoom() {
+    document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+    
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+}
+
+// Smooth scroll for iOS
+function smoothScrollForIOS() {
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+        document.documentElement.style.scrollBehavior = 'smooth';
+    }
+}
+
+// Fix for iOS 100vh issue in CSS
+function addIOSViewportFix() {
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Fix for iOS 100vh issue */
+        .section-home {
+            min-height: 100vh; /* Fallback */
+            min-height: calc(var(--vh, 1vh) * 100);
+        }
+        
+        /* Fix for iOS input zoom */
+        input, select, textarea {
+            font-size: 16px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            /* Disable pull-to-refresh on mobile */
+            body {
+                overscroll-behavior-y: contain;
+            }
+            
+            /* Better touch targets */
+            .btn, .nav-link, .project-link {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Handle orientation change
+function handleOrientationChange() {
+    window.addEventListener('orientationchange', function() {
+        // After orientation change, reset the viewport
+        setTimeout(fixMobileViewport, 100);
+        // Reset scroll position
+        window.scrollTo(0, 0);
+    });
+}
+
+// Initialize all mobile fixes
+function initializeMobileFixes() {
+    fixMobileViewport();
+    preventIOSZoom();
+    smoothScrollForIOS();
+    addIOSViewportFix();
+    handleOrientationChange();
+}
+
 // Initialize everything when DOM is loaded
 window.addEventListener('DOMContentLoaded', () => {
     updateActiveNav();
@@ -310,6 +403,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initializeIntersectionObservers();
     initializeSmoothScrolling();
     addCustomStyles();
+    initializeMobileFixes();
     
     // Set current year in footer
     const currentYear = new Date().getFullYear();
@@ -423,113 +517,3 @@ function addScrollProgress() {
 
 // Uncomment to enable scroll progress bar
 // addScrollProgress();
-
-// Add after your existing code in main.js
-
-// Fix for mobile viewport height
-function fixMobileViewport() {
-    // First we get the viewport height and we multiply it by 1% to get a value for a vh unit
-    let vh = window.innerHeight * 0.01;
-    // Then we set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    
-    // Update on resize
-    window.addEventListener('resize', () => {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
-}
-
-// Prevent zoom on input focus in iOS
-function preventIOSZoom() {
-    document.addEventListener('touchstart', function(event) {
-        if (event.touches.length > 1) {
-            event.preventDefault();
-        }
-    }, { passive: false });
-    
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', function(event) {
-        const now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
-        }
-        lastTouchEnd = now;
-    }, false);
-}
-
-// Smooth scroll for iOS
-function smoothScrollForIOS() {
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
-        document.documentElement.style.scrollBehavior = 'smooth';
-    }
-}
-
-// Fix for iOS 100vh issue in CSS
-function addIOSViewportFix() {
-    const style = document.createElement('style');
-    style.textContent = `
-        /* Fix for iOS 100vh issue */
-        .section-home {
-            min-height: 100vh; /* Fallback */
-            min-height: calc(var(--vh, 1vh) * 100);
-        }
-        
-        /* Fix for iOS input zoom */
-        input, select, textarea {
-            font-size: 16px;
-        }
-        
-        @media screen and (max-width: 768px) {
-            /* Disable pull-to-refresh on mobile */
-            body {
-                overscroll-behavior-y: contain;
-            }
-            
-            /* Better touch targets */
-            .btn, .nav-link, .project-link {
-                min-height: 44px;
-                min-width: 44px;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-// Handle orientation change
-function handleOrientationChange() {
-    window.addEventListener('orientationchange', function() {
-        // After orientation change, reset the viewport
-        setTimeout(fixMobileViewport, 100);
-        // Reset scroll position
-        window.scrollTo(0, 0);
-    });
-}
-
-// Initialize all mobile fixes
-function initializeMobileFixes() {
-    fixMobileViewport();
-    preventIOSZoom();
-    smoothScrollForIOS();
-    addIOSViewportFix();
-    handleOrientationChange();
-}
-
-// Update your DOMContentLoaded event listener
-window.addEventListener('DOMContentLoaded', () => {
-    updateActiveNav();
-    
-    // Initialize features
-    initializeProjectFilter();
-    initializeIntersectionObservers();
-    initializeSmoothScrolling();
-    addCustomStyles();
-    initializeMobileFixes(); // Add this line
-    
-    // Set current year in footer
-    const currentYear = new Date().getFullYear();
-    const yearElement = document.querySelector('.footer-bottom p');
-    if (yearElement) {
-        yearElement.innerHTML = `&copy; ${currentYear} Edwin Christian E. Bacay. All Rights Reserved. | Built with ❤️ using HTML, CSS & JavaScript`;
-    }
-});
